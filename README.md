@@ -13,7 +13,7 @@ Production code is all about size and performance, so it inlcudes a lot features
 ### Why the need of arrow function came in ES6
 - Arrow functions have a more concise syntax compared to traditional functions
 - Arrow functions allow for an implicit return of the function. In traditional functions, you have to explicitly return a value
-### Difference between 
+### Difference between normal and arrow function
  The value of the 'this' keyword inside an arrow function is based on the context in which the function is defined, whereas the value of 'this' inside a normal function depends on how the function is called. In other words, arrow functions have a lexical 'this' binding, while normal functions have a dynamic 'this' binding.
  ```javascript
 const person = {
