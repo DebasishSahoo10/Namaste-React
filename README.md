@@ -45,3 +45,14 @@ obj.greet(); // output: Hello, my name is John
 ```
 
 ---
+### What should be on the GitIgnore
+Anything that can be regenreated by your buildtool on the server should be put in the GITIGNORE. (thumb rule)
+### Why React is Fast
+It is not just React's features that makes it fast, it much more that goes into building the web app fueled on React, that makes the React app fast. e.g. Buildtools. React can't make a performant app alone, it needs a buildtool, and that buildtool need another helper codes too.
+### What are Transitive Dependencies
+A Tool in React can have its dependecies and those dependecies can have their own dependecies, this concepts is called Transitive Dependecies. And to track buildtools like vite create a Dependecy Tree.
+### What is Tree Shaking
+- Tree shaking is a technique used in modern JavaScript module bundlers, such as Webpack and Rollup(which is included in Vite), to eliminate unused code from a project's final build. The term "tree shaking" comes from the idea of shaking a tree to remove the dead leaves.
+- The process of tree shaking begins by analyzing the project's module dependencies and building a dependency graph, or a map of all the imported modules and their dependencies. The module bundler then walks through this dependency graph and marks any code that is not referenced or used by the application. This process is often called "dead code elimination."
+### What is the difference between `package.json` and `package-lock.json`
+The main difference between package.json and package-lock.json is that the former is a configuration file that is manually created and maintained by developers, while the latter is an automatically generated file that provides a complete and accurate list of all the dependencies and their versions. package.json is used to specify the project's dependencies and configuration settings, while package-lock.json is used to ensure that those dependencies are installed consistently and reliably across different machines and environments.
