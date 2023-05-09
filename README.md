@@ -56,3 +56,43 @@ A Tool in React can have its dependecies and those dependecies can have their ow
 - The process of tree shaking begins by analyzing the project's module dependencies and building a dependency graph, or a map of all the imported modules and their dependencies. The module bundler then walks through this dependency graph and marks any code that is not referenced or used by the application. This process is often called "dead code elimination."
 ### What is the difference between `package.json` and `package-lock.json`
 The main difference between package.json and package-lock.json is that the former is a configuration file that is manually created and maintained by developers, while the latter is an automatically generated file that provides a complete and accurate list of all the dependencies and their versions. package.json is used to specify the project's dependencies and configuration settings, while package-lock.json is used to ensure that those dependencies are installed consistently and reliably across different machines and environments.
+
+---
+
+### React Elements vs. React Component
+React elements are plain JavaScript objects that describe what you want to see on the screen. They are lightweight and immutable, and represent a virtual view of a DOM element. An example of a React element would be:
+```javascript
+const element = <h1>Hello, world!</h1>;
+```
+React components, on the other hand, are reusable pieces of code that encapsulate the logic and rendering of a portion of the UI. They are typically created using JavaScript classes or functions, and can accept input data (known as "props") and state. An example of a React component would be:
+```javascript
+import React from 'react';
+
+function Greeting(props) {
+  return (
+    <div>
+      <h1>Hello, {props.name}!</h1>
+      <p>Welcome to my website.</p>
+    </div>
+  );
+}
+
+export default Greeting;
+```
+### How Babel works in the background
+It converts the JSX syntax into plain JavaScript code.
+```javascript
+// JSX code
+const element = <h1>Hello, world!</h1>;
+
+// Transpiled JavaScript code
+const element = React.createElement("h1", null, "Hello, world!");
+```
+Babel also transforms other modern JavaScript syntax, allowing developers to write code using the latest language features without worrying about browser compatibility issues. We do not need to write polyfill. Babel does it automatically.
+### NPM vs. NPX
+- npx - executing commands without downloading packages
+- npm - will download required packages
+### Santisation in JSX
+In React, sanitization is the process of cleaning and validating user input to prevent malicious code injection and other security vulnerabilities. Sanitizing user input is an important step in creating secure web applications.
+### Component Composition
+A component under another component is called Component Composition. Just a fancy name for Nested Component
