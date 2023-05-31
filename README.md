@@ -96,3 +96,32 @@ Babel also transforms other modern JavaScript syntax, allowing developers to wri
 In React, sanitization is the process of cleaning and validating user input to prevent malicious code injection and other security vulnerabilities. Sanitizing user input is an important step in creating secure web applications.
 ### Component Composition
 A component under another component is called Component Composition. Just a fancy name for Nested Component
+
+---
+
+### React.Fragment
+React fragments are a simple yet elegant feature that enable grouping multiple sibling components without introducing any unnecessary markup in the rendered HTML. They serve as a cleaner alternative to using unnecessary divs in code, and you can create and render fragments in several ways. You should use React fragments when you want to add a parent element to fulfill the JSX syntax, but without introducing an extra node to the DOM.
+### Virtual DOM : the secret superhero(Reconciliation and Fiber)
+1. First Thing : When new elements are added to the UI, a virtual DOM, which is represented as a tree is created. Each element is a node on this tree. If the state of any of these elements changes, a new virtual DOM tree is created. This tree is then compared or “diffed” with the previous virtual DOM tree. Once this is done, the virtual DOM calculates the best possible method to make these changes to the real DOM. This ensures that there are minimal operations on the real DOM. Hence, reducing the performance cost of updating the real DOM. This Process is called Reconcilation. And the algorithim is called FIBER.
+2. Second thing : in the process of DOM updation, the most expensive task is Reflow and Repaint. For that React follows a batch update mechanism to update the real DOM. Hence, leading to increased performance. This means that updates to the real DOM are sent in batches, instead of sending updates for every single change in state. The repainting of the UI is the most expensive part, and React efficiently ensures that the real DOM receives only batched updates to repaint the UI.
+### What is the difference between a controlled component and an uncontrolled component?
+1. A large part of React is this idea of having components control and manage their own state. What happens when we throw native HTML form elements (input, select, textarea, etc) into the mix? Should we have React be the "single source of truth" like we're used to doing with React or should we allow that form data to live in the DOM like we're used to typically doing with HTML form elements? These two questions are at the heart of controlled vs. uncontrolled components.
+2. A controlled component is a component where React is in control and is the single source of truth for the form data. As you can see below, username doesn't live in the DOM but instead lives in our component state. Whenever we want to update username, we call setState as we're used to.
+3. An uncontrolled component is where your form data is handled by the DOM, instead of inside your React component. It is done using useRef hooks.
+### Describe how events are handled in React
+1. In order to solve cross browser compatibility issues, your event handlers in React will be passed instances of SyntheticEvent, which is React's cross-browser wrapper around the browser's native event. These synthetic events have the same interface as native events you're used to, except they work identically across all browsers.
+2. What's mildly interesting is that React doesn't actually attach events to the child nodes themselves. React will listen to all events at the top level using a single event listener. This is good for performance and it also means that React doesn't need to worry about keeping track of event listeners when updating the DOM. This concept is called Event Delegation.
+### Event Delegation
+Event delegation is a pattern used in React for handling events that involves adding a single event listener to a parent element instead of adding event listeners to individual child elements. When an event occurs on a child element, the event listener on the parent element is notified, and the parent element can handle the event. This is useful when you have many child elements and want to avoid adding event listeners to them. To make this concept happen React uses Event Bubbling.
+### What is the second argument that can optionally be passed to setState and what is its purpose?
+A callback function which will be invoked when setState has finished and the component is re-rendered. Something that's not spoken of a lot is that setState is asynchronous, which is why it takes in a second callback function to run it when the asynchronoys task has been done. Typically it's best to use another lifecycle method rather than relying on this callback function, but it's good to know it exists.
+```javascript
+this.setState(
+  { username: 'tylermcginnis' },
+  () => console.log('setState has finished and the component has re-rendered.')
+)
+```
+### Why we need keys in React? When do we need keys in React?
+When we render a set of same type of elements like a list of same kind of element or elements from a same source, then React can be confused when a state changes in that list, to render exactly which list item. so to make things easier, we give every list item a key so that it can find that exact unique piece which state has been changed.
+### What is a Config Driven UI ?
+A config-driven UI is a way of building user interfaces that uses configuration files to define the layout, styles, and other properties of UI elements. This approach makes it easier to customize the UI for different use cases or user groups, without the need for extensive coding.
