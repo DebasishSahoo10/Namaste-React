@@ -125,3 +125,16 @@ this.setState(
 When we render a set of same type of elements like a list of same kind of element or elements from a same source, then React can be confused when a state changes in that list, to render exactly which list item. so to make things easier, we give every list item a key so that it can find that exact unique piece which state has been changed.
 ### What is a Config Driven UI ?
 A config-driven UI is a way of building user interfaces that uses configuration files to define the layout, styles, and other properties of UI elements. This approach makes it easier to customize the UI for different use cases or user groups, without the need for extensive coding.
+
+---
+### What is the right way to write modular CSS?
+Componenet.module.css
+### What is Namespace Imports ?
+In addition to named exports and default exports, there is another way to import everything from a file on an object, which is called namespace import. This is done by using import * as MyClasses from "./MyClass";, where MyClasses is an object containing all the exports from the "./MyClass" file. You can then access the exports by using MyClasses.MyClass or MyClasses.default. It's worth noting that default exports are actually named exports with the name "default", so you can import them with a named import like import { default as MyDefaultExport } from "./MyFileWithADefaultExport";
+### What is the importance of config.js file
+It is used to store all the hardcoded stuff of your app. In the context of a React application, you can use a config.js file to store configuration settings that are specific to your application, such as the base URL for your API or the default values for certain components. You can then import these settings into your React components as needed.
+### What are React Hooks ?
+1. In simple words Hooks are pre-written re-usable functions that performs a set of generalized tasks to give us some extra developer features which would be otherwise both lengthy and time-consuming to code.
+2. Hooks are a feature introduced in React 16.8 that allows functional components in React to have state and side-effect capabilities, which were previously only available in class components. Hooks provide a more concise and intuitive way to manage state and side effects in functional components, without the need for class syntax and without introducing unnecessary nesting. We can imagine Hooks as extra features from React which gives us and our app some super powers over usual DOM manipulations.
+3. What is the Idea behind Hooks : The idea behind Hooks is to provide a more straightforward and unified way to handle state and side effects in React components. Prior to Hooks, complex state management and side-effect logic often required the use of class components with lifecycle methods, which could lead to cumbersome and harder-to-understand code. Hooks were introduced to simplify this process and make it easier to manage state and side effects in functional components.
+4. Why Hooks are called Hooks : Hooks are called "Hooks" because they are special functions that allow developers to "hook into" React's lifecycle and state management features, enabling functional components to use previously exclusive features of class components
