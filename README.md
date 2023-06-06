@@ -138,3 +138,21 @@ It is used to store all the hardcoded stuff of your app. In the context of a Rea
 2. Hooks are a feature introduced in React 16.8 that allows functional components in React to have state and side-effect capabilities, which were previously only available in class components. Hooks provide a more concise and intuitive way to manage state and side effects in functional components, without the need for class syntax and without introducing unnecessary nesting. We can imagine Hooks as extra features from React which gives us and our app some super powers over usual DOM manipulations.
 3. What is the Idea behind Hooks : The idea behind Hooks is to provide a more straightforward and unified way to handle state and side effects in React components. Prior to Hooks, complex state management and side-effect logic often required the use of class components with lifecycle methods, which could lead to cumbersome and harder-to-understand code. Hooks were introduced to simplify this process and make it easier to manage state and side effects in functional components.
 4. Why Hooks are called Hooks : Hooks are called "Hooks" because they are special functions that allow developers to "hook into" React's lifecycle and state management features, enabling functional components to use previously exclusive features of class components
+
+---
+
+### Why we need useState to keep variables, why we are not using normal variables/bindings ?
+Because React tracks its own kind of state to change the DOM, that's why normal variables can't be used.
+### What type of JS code goes inside JSX curly braces ? Expressions or Statement ?
+An Expression goes in there, it can be of multiple staements, but it has to be returning a value out of it.
+### Why we need a useEffect hook?
+The primary reason is to do a fucntion automatically on the component load. ***why we can't use onLoad event for the same*** : for the simple reason of being optimisation and memory leak issues. And if we want't the same fucntion to run once again on the dependency change then we can achieve that using useEffect, otherwise we have to write another event listener alltogether.
+### What is Optional Chaining ? Why we need it ?
+- Optional chaining (?.) is a feature introduced in ES2020 that allows you to access properties of deeply nested objects without having to perform multiple null checks. It simplifies the syntax for accessing nested object properties and returns undefined if an intermediate property is null or undefined, instead of throwing an error.
+- another reason will be to avoid errors, because we can write a fallback function for a `undefined` value but to write the same for an error will be difficult.
+### What is a Microservice? What is Monolith architecture? What is the difference between Monolith and Microservice?
+- A microservice is an architectural approach that composes software into small independent components or services, each performing a single function and communicating with other services through a well-defined interface, mainly APIs. On the other hand, a monolithic architecture is a traditional software development model that uses one code base to perform multiple business functions.
+- from the Deploy POV : the monolith gets deployed all the codes once again even when we want to change just a single aspect of the whole app. But in the Microservices just the changed part will be re-deployed. that's why currently majority of the industry follow the microservice archtitecture.
+### What is Shimmer UI?
+Shimmer UI is a temporary animation placeholder that mimics the layout and shapes of the content that will eventually appear. It uses a gradient animation to create a shimmering effect over the placeholders, giving the user a sense of motion and progress.
+### What is CORS? Why Browesers do that?
