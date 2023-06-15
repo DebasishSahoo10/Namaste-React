@@ -156,3 +156,5 @@ The primary reason is to do a fucntion automatically on the component load. ***w
 ### What is Shimmer UI?
 Shimmer UI is a temporary animation placeholder that mimics the layout and shapes of the content that will eventually appear. It uses a gradient animation to create a shimmering effect over the placeholders, giving the user a sense of motion and progress.
 ### What is CORS? Why Browesers do that?
+### What would happen if we do console.log(useState())?
+It will give us the barebone returned value of a useState. basically an array containing two values, one is undefined which stands for the variable that useState gives us and second a constructor function which name will be Function itself.
